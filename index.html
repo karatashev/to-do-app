@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="to-do-wrapper">
+      <!-- Form -->
+      <form id="adding-task">
+        <h1>JUST DO IT list</h1>
+        <input
+          type="text"
+          name="new-task-input"
+          id="new-task-input"
+          placeholder="type here"
+        />
+        <input 
+          type="submit" 
+          id="new-task-submit" 
+          value="Add" 
+        />
+        <!-- slightly-important -->
+        <div class="importance-level">
+        <div>
+        <input type="radio" id="slightly-important" class="radio" name="important" value="slightly">
+        <label for="slightly-important">slightly-important</label>
+        </div>
+
+        <!-- important -->
+        <div>
+        <input type="radio" id="important" class="radio" name="important" value="important">
+        <label for="important">important</label>
+        </div>
+
+        <!-- very-important -->
+        <div>
+        <input type="radio" id="very-important" class="radio" name="important" value="very">
+        <label for="very-important">very-important</label>
+        </div>
+        </div>
+      </form>
+
+
+
+    <!-- New task -->
+      <div id="tasks">
+        <h2>Tasks</h2>
+        <div class="task">
+          <div class="task-content">
+            <input type="text" class="task-text" value="new-task" readonly>
+          </div>
+        
+        <!-- Button -->
+        <div class="task-buttons">
+          <span class="btn-importance-lvl">Importance</span>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+      
+    </div> 
+
+    <script src="main.js"></script>
+  </body>
+</html>

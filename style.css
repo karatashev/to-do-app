@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root {
+	--dark-grey: #2A2E2E;
+	--light-grey: #5D6773;
+	--orange: #FF8848;
+	--light-blue: #BFFCFD;
+  --green: #6EAB70;
+  --clr-text: #fff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+/* font-family: 'Open Sans', sans-serif; */
+
+body {
+  background-image: url(/annie-spratt-6a3nqQ1YwBw-unsplash.jpg);
+  width: 100%;
+  color: var(--clr-text);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Container */
+.to-do-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 700px;
+  width: 80%;
+  background-image: linear-gradient(to right, var(--orange), var(--dark-grey));
+  margin: 40px;
+  padding: 20px;
+  border: transparent;
+  border-radius: 20px;
+  box-shadow: 1px 1px 0px var(--orange),
+              2px 2px 1px var(--orange);
+}
+
+
+/* Inputs */
+#new-task-input {
+  width: 80%;
+  padding: 10px;
+  color: var(--clr-text);
+  border: none;
+  border-radius: 20px;
+  background-color: var(--light-grey);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#new-task-input::placeholder {
+  color: var(--clr-text);
+}
+
+#new-task-submit {
+  width: 70px;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color: var(--green);
+  color: var(--clr-text);
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#new-task-submit:hover,
+#new-task-submit:hover {
+  opacity: 0.8;
+}
+
+
+input[type="text"]:focus {
+  outline: none;
+  text-align: start;
+}
+
+/* Radio buttons */
+.importance-level {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Tasks */
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--light-grey);
+	padding: 1rem;
+	border-radius: 20px;
+	margin-bottom: 1rem;
+}
+
+.task .task-content {
+	flex: 1 1 0%;
+}
+
+.task .task-content .task-text {
+	color: var(--clr-text);
+	font-size: 1rem;
+	width: 95%;
+	display: block;
+  padding: 5px;
+}
+
+.task .task-content .task-text {
+	background-color: var(--light-grey);
+  border: none;
+}
+
+.task .task-buttons {
+	display: flex;
+	margin: 0 -0.5rem;
+  align-items: center;
+}
+
+.btn-delete {
+  width: 70px;
+  padding: 5px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color: rgb(202, 49, 49);
+  color: var(--clr-text);
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.btn-delete:hover,
+.btn-delete:active {
+  opacity: 0.8;
+}
