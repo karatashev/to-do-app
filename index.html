@@ -16,9 +16,9 @@
 
   <body>
     <div class="to-do-wrapper">
-      <!-- Form -->
-      <form id="adding-task">
+      <!-- Add task -->
         <h1>JUST DO IT list</h1>
+        <div class="new-task-container">
         <input
           type="text"
           name="new-task-input"
@@ -26,14 +26,15 @@
           placeholder="type here"
         />
         <input 
-          type="submit" 
+          type="button" 
           id="new-task-submit" 
           value="Add" 
         />
+      </div>
         <!-- slightly-important -->
         <div class="importance-level">
         <div>
-        <input type="radio" id="slightly-important" class="radio" name="important" value="slightly">
+        <input type="radio" id="slightly-important" class="radio" name="important" value="slightly important">
         <label for="slightly-important">slightly-important</label>
         </div>
 
@@ -45,31 +46,31 @@
 
         <!-- very-important -->
         <div>
-        <input type="radio" id="very-important" class="radio" name="important" value="very">
+        <input type="radio" id="very-important" class="radio" name="important" value="very important">
         <label for="very-important">very-important</label>
         </div>
         </div>
-      </form>
-
+        
+        <!-- <span id="alertMsg">Select the importance level!</span> -->
 
 
     <!-- New task -->
       <div id="tasks">
         <h2>Tasks</h2>
-        <div class="task">
+        <!-- <div class="task">
           <div class="task-content">
             <input type="text" class="task-text" value="new-task" readonly>
           </div>
         
-        <!-- Button -->
+        
         <div class="task-buttons">
           <span class="btn-importance-lvl">Importance</span>
           <button class="btn-delete">Delete</button>
         </div>
-      </div>
+        </div> -->
       
     </div> 
-
+</div>
     <script src="main.js"></script>
   </body>
 </html>

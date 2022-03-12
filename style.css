@@ -52,6 +52,10 @@ body {
 
 
 /* Inputs */
+.new-task-container {
+ margin: 15px;
+}
+
 #new-task-input {
   width: 80%;
   padding: 10px;
@@ -97,18 +101,26 @@ input[type="text"]:focus {
   align-items: center;
 }
 
-/* Tasks */
-#tasks .task {
-	display: flex;
-	justify-content: space-between;
-	background-color: var(--light-grey);
-	padding: 1rem;
-	border-radius: 20px;
-	margin-bottom: 1rem;
+.alert-msg {
+  color: rgb(202, 49, 49);;
+  margin-top: 15px;
+  display: flex;
+  justify-content: end;
 }
 
-.task .task-content {
-	flex: 1 1 0%;
+/* Tasks */
+#tasks {
+  width: 95%;
+}
+
+.task {
+	display: flex;
+	justify-content: space-between;
+  align-items: center;
+	background-color: var(--light-grey);
+	border-radius: 20px;
+  width: 100%;
+  margin: 15px;
 }
 
 .task .task-content .task-text {
@@ -116,7 +128,7 @@ input[type="text"]:focus {
 	font-size: 1rem;
 	width: 95%;
 	display: block;
-  padding: 5px;
+  
 }
 
 .task .task-content .task-text {
@@ -126,8 +138,9 @@ input[type="text"]:focus {
 
 .task .task-buttons {
 	display: flex;
-	margin: 0 -0.5rem;
+  justify-content: center;
   align-items: center;
+  
 }
 
 .btn-delete {
@@ -139,7 +152,7 @@ input[type="text"]:focus {
   background-color: rgb(202, 49, 49);
   color: var(--clr-text);
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 
 .btn-delete:hover,
