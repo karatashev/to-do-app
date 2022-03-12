@@ -58,7 +58,7 @@ body {
 
 #new-task-input {
   width: 80%;
-  padding: 10px;
+  padding: 15px;
   color: var(--clr-text);
   border: none;
   border-radius: 20px;
@@ -101,11 +101,14 @@ input[type="text"]:focus {
   align-items: center;
 }
 
-.alert-msg {
+span#alertMsg {
+  visibility: hidden;
+  display: none;
   color: rgb(202, 49, 49);;
   margin-top: 15px;
   display: flex;
   justify-content: end;
+  font-size: 1.2rem;
 }
 
 /* Tasks */
@@ -118,29 +121,31 @@ input[type="text"]:focus {
 	justify-content: space-between;
   align-items: center;
 	background-color: var(--light-grey);
-	border-radius: 20px;
+	border-radius: 23px;
   width: 100%;
-  margin: 15px;
+  margin: 20px;
+  padding-right: 20px;
 }
 
 .task .task-content .task-text {
 	color: var(--clr-text);
 	font-size: 1rem;
-	width: 95%;
+	width: 100%;
 	display: block;
-  
-}
-
-.task .task-content .task-text {
-	background-color: var(--light-grey);
+  background-color: var(--light-grey);
   border: none;
 }
+
 
 .task .task-buttons {
 	display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+
+.btn-importance-lvl {
+  display: inline;
+  white-space: nowrap;
 }
 
 .btn-delete {
