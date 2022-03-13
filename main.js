@@ -15,6 +15,8 @@ addBtn.addEventListener('click', () => {
     alertMsg.style.visibility = 'visible';
     return;
   }
+
+  alertMsg.style.visibility = 'hidden';
   
   // simplier way to select the input value
   let importanceLevel = document.querySelector('input[name="important"]:checked').value;
