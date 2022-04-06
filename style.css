@@ -6,10 +6,10 @@
 
 
 :root {
-	--dark-grey: #2A2E2E;
-	--light-grey: #5D6773;
-	--orange: #FF8848;
-	--light-blue: #BFFCFD;
+  --dark-grey: #2A2E2E;
+  --light-grey: #5D6773;
+  --orange: #FF8848;
+  --light-blue: #BFFCFD;
   --green: #6EAB70;
   --clr-text: #fff;
 }
@@ -47,13 +47,13 @@ body {
   border: transparent;
   border-radius: 20px;
   box-shadow: 1px 1px 0px var(--orange),
-              2px 2px 1px var(--orange);
+    2px 2px 1px var(--orange);
 }
 
 
 /* Inputs */
 .new-task-container {
- margin: 15px;
+  margin: 15px;
 }
 
 #new-task-input {
@@ -104,12 +104,13 @@ input[type="text"]:focus {
 span#alertMsg {
   visibility: hidden;
   display: none;
-  color: rgb(202, 49, 49);;
+  color: rgb(202, 49, 49);
+  ;
   margin-top: 15px;
   display: flex;
   justify-content: end;
   font-size: 1.2rem;
-  
+
 }
 
 /* Tasks */
@@ -118,28 +119,28 @@ span#alertMsg {
 }
 
 .task {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-	background-color: var(--light-grey);
-	border-radius: 23px;
+  background-color: var(--light-grey);
+  border-radius: 23px;
   width: 100%;
   margin: 20px;
   padding-right: 20px;
 }
 
 .task .task-content .task-text {
-	color: var(--clr-text);
-	font-size: 1rem;
-	width: 100%;
-	display: block;
+  color: var(--clr-text);
+  font-size: 1rem;
+  width: 100%;
+  display: block;
   background-color: var(--light-grey);
   border: none;
 }
 
 
 .task .task-buttons {
-	display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -166,30 +167,43 @@ span#alertMsg {
   opacity: 0.8;
 }
 
+#alertMsg {
+  visibility: hidden;
+}
+
+#alertMsg.visible {
+  visibility: visible;
+}
+
 /* Media queries */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
+
   h1 {
     font-size: 1.5rem;
     text-align: center;
   }
+
   h2 {
     margin-top: 15px;
     text-align: center;
   }
+
   .to-do-wrapper {
     width: 90%;
     margin: 40px 20px 0px 20px;
     padding: 5px;
   }
+
   .new-task-container {
     margin: 5px;
   }
+
   #new-task-input {
     width: 100%;
     padding: 15px;
   }
+
   #new-task-submit {
     margin: 5px auto;
     padding: 10px;
@@ -197,29 +211,35 @@ span#alertMsg {
     display: block;
     font-size: 1.2rem;
   }
+
   .importance-level {
     flex-direction: column;
     align-items: stretch;
   }
+
   span#alertMsg {
     justify-content: start;
   }
+
   #tasks {
     width: 100%;
     margin: 5px auto;
     display: flex;
     flex-direction: column;
   }
+
   .task {
     width: 95%;
     margin: 10px;
     padding: 5px;
     padding-right: 15px;
   }
+
   .btn-importance-lvl {
     width: 50%;
     white-space: normal;
   }
+
   .btn-delete {
     margin-left: 10px;
   }

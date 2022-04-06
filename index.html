@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
 
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
 
-  <body>
-    <div class="to-do-wrapper">
-      <!-- Add task -->
-        <h1>JUST DO IT list</h1>
-        <div class="new-task-container">
-        <input
-          type="text"
-          name="new-task-input"
-          id="new-task-input"
-          placeholder="type here"
-        />
-        <input 
-          type="button" 
-          id="new-task-submit" 
-          value="Add" 
-        />
-      </div>
-        <!-- slightly-important -->
-        <div class="importance-level">
-        <div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div class="to-do-wrapper">
+    <!-- Add task -->
+    <h1>JUST DO IT list</h1>
+    <div class="new-task-container">
+      <input type="text" name="new-task-input" id="new-task-input" placeholder="type here" />
+      <input type="button" id="new-task-submit" value="Add" />
+    </div>
+    <!-- slightly-important -->
+    <div class="importance-level">
+      <div>
         <input type="radio" id="slightly-important" class="radio" name="important" value="slightly important" checked>
         <label for="slightly-important">slightly-important</label>
-        </div>
+      </div>
 
-        <!-- important -->
-        <div>
+      <!-- important -->
+      <div>
         <input type="radio" id="important" class="radio" name="important" value="important">
         <label for="important">important</label>
-        </div>
+      </div>
 
-        <!-- very-important -->
-        <div>
+      <!-- very-important -->
+      <div>
         <input type="radio" id="very-important" class="radio" name="important" value="very important">
         <label for="very-important">very-important</label>
-        </div>
-        </div>
-        
-        <span id="alertMsg">Select the importance level!</span>
+      </div>
+    </div>
+
+    <span id="alertMsg">Select the importance level!</span>
 
 
     <!-- New task -->
-      <div id="tasks">
-        <h2>Tasks</h2>
-        <!-- <div class="task">
+    <div id="tasks">
+      <h2>Tasks</h2>
+      <!-- <div class="task">
           <div class="task-content">
             <input type="text" class="task-text" value="new-task" readonly>
           </div>
@@ -68,9 +59,11 @@
           <button class="btn-delete">Delete</button>
         </div>
         </div> -->
-      
-    </div> 
-</div>
-    <script src="OOP.js"></script>
-  </body>
+
+    </div>
+  </div>
+  <script src="OOP.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

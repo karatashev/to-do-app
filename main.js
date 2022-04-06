@@ -5,66 +5,33 @@ const addBtn = document.getElementById("new-task-submit");
 //alert
 const alertMsg = document.querySelector("#alertMsg");
 
-addBtn.addEventListener("click", () => {
-  const task = newTaskInput.value;
+// tasks container
+const tasksList = document.getElementById("tasks");
 
-  if (task === "") {
+addBtn.addEventListener("click", () => {
+  const taskName = newTaskInput.value;
+
+  if (taskName === "") {
     alertMsg.innerText = "You must write the name of the task!";
-    alertMsg.style.visibility = "visible";
+    alertMsg.classList.add("visible");
+
     return;
   }
 
-  alertMsg.style.visibility = "hidden";
+  alertMsg.classList.remove("visible");
 
-  // simplier way to select the input value
-  let importanceLevel = document.querySelector(
-    'input[name="important"]:checked'
-  ).value;
-  console.log(importanceLevel);
-  // if (document.getElementById('slightly-important').checked) {
-  //   importanceLevel = document.getElementById('slightly-important').value;
-  // }
-  // else if (document.getElementById('important').checked) {
-  //   importanceLevel = document.getElementById('important').value;
-  // }
-  // else  {
-  //   importanceLevel = document.getElementById('very-important').value;
-  // };
+  // immediately turn it into an Array, so that you can use Array methods on it, like .find(), .some(), .all() etc.
+  const allRadioOptions = Array.from(document.querySelectorAll('[type="radio"][name="important"]'));
 
-  //select the task list and create Task
-  const tasksList = document.getElementById("tasks");
-  const taskItem = document.createElement("div");
-  taskItem.classList.add("task");
-  taskItem.innerHTML = `
-        <div class="task">
-          <div class="task-content">
-            <input type="text" class="task-text" value="${task}" readonly>
-          </div>
-        `;
-  //add task buttons to the Task
-  const taskButtons = document.createElement("div");
-  taskButtons.classList.add("task-buttons");
-  taskItem.appendChild(taskButtons);
+  // then find the radio whose "checked" property is set to true
+  const importanceSelection = allRadioOptions.find((radio, i) => {
+    return radio.checked === true;
+  }).value;
 
-  //add importance span info to the taks buttons
-  const taskImportance = document.createElement("span");
-  taskImportance.classList.add("btn-importance-lvl");
-  taskImportance.innerText = importanceLevel;
-  taskButtons.appendChild(taskImportance);
-
-  //create a delete button to start listening clicks
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("btn-delete");
-  deleteBtn.innerText = "Delete";
-  deleteBtn.addEventListener("click", () => {
-    tasksList.removeChild(taskItem);
-  });
-
-  //add delete button to the task buttons
-  taskButtons.appendChild(deleteBtn);
+  // you're creating the task item here
+  new ListItem(taskName, importanceSelection, tasksList);
 
   newTaskInput.value = "";
 
-  // add the whole Task to the Task List
-  tasksList.appendChild(taskItem);
+  return;
 });
