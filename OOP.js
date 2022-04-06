@@ -1,45 +1,65 @@
 class ListItem {
-  myTask = null;
-  taskName = document.getElementById("new-task-input").value;
+  element = null;
 
-  constructor(taskName) {
-    const toDoList = document.getElementById('tasks');
-    this.myTask = document.createElement('div');
-    
-    this.element = task;
-    this.update(taskName)
-    myTask.innerHTML = `
+  taskName = '';
+  importance = '';
+
+  taskNameHolder = null;
+  importanceIndicator = null;
+  deleteBtn = null;
+
+  constructor(taskName, importance, parent) {
+    this.taskName = taskName;
+    this.importance = importance;
+
+    this.element = document.createElement('div');
+    this.element.className = 'task';
+
+    // adding the element to the DOM
+    this.render();
+
+    parent.appendChild(this.element);
+  }
+
+  render() {
+    // do some fixing here, you're getting a parent div with class="task", then another <div class="task"> inside of it
+    // in order to fix that, you'll also need to do some fixing in CSS
+    this.element.innerHTML = `
       <div class="task">
         <div class="task-content">
-          <input type="text" class="task-text" value="${taskName}" readonly>
+          ${this.taskName}
         </div>
-  
-        <div class="task-buttons">
-          <span class="btn-importance-lvl">Importance</span>
-          <button class="btn-delete">Delete</button>
-        </div>
-      </div>`
-      toDoList.appendChild(this.element);
-      const addBtn = document.querySelector('.btn-delete');
-      addBtn.addEventListener('click', () => {
-        new ListItem(this.taskName);
-        console.log(addBtn);
-      })
+      </div>
+      <div class="task-buttons">
+        <span class="btn-importance-lvl">${this.importance}</span>
+        <button class="btn-delete">Delete</button>
+      </div>
+    `;
+
+    // store #task-content in a variable, so you can easily change its innerText
+    this.taskNameHolder = this.element.querySelector('#task-content');
+    this.importanceIndicator = this.element.querySelector('.btn-importance-lvl');
+    this.deleteBtn = this.element.querySelector('.btn-delete');
+
+    this.deleteBtn.addEventListener('click', this.deleteTask)
   }
 
-  addTask() {
-
+  changeTaskName(newName) {
+    this.taskName = newName;
+    this.taskNameHolder.innerText = newName;
   }
 
-  update(taskName) {
-    this.myTask.innerHTML = taskName;
+  changeImportance(newImportance) {
+    this.importance = newImportance;
+    this.importanceIndicator = newImportance;
   }
 
-  getTaskName() {
-    return this.myTask.innerHTML;
-  }
-  removeTask() {
-    this.taskName.remove();
+  // there's some difference between deleteTask() {} and deleteTask = () => {}
+  // but we haven't got to that part with our lessons.
+  // It needs learning about "this"
+  deleteTask = () => {
+    this.deleteBtn.removeEventListener('click', this.deleteTask);
+    this.element.remove();
   }
 }
 
